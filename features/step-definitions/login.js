@@ -9,7 +9,7 @@ When(/^User clicks the "Login" button$/, async () => {
     await loginPage.clickLoginButton();
 });
 
-Then(/^User should see "([^"]*)" error message$/, async (expectedMessage) => {
+Then(/^User should see "(.*)" error message$/, async (expectedMessage) => {
     await expect(loginPage.errorMessage).toBeExisting();
     await expect(loginPage.errorMessage).toHaveText(expect.stringContaining(expectedMessage));
 });
